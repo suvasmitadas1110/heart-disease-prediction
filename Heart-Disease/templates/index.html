@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{url_for('static',filename='heart.css')}}">
+  <script src="{{url_for('static',filename='main.js')}}"></script>
+  <title>Heart</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body id="mainbody">
+  <h1>Heart-Disease Prediction</h1>
+  <form id="fill" action="{{url_for('predict')}}" method="post" onsubmit="return validation();">
+    <div class="row">
+      <div class="col">
+        <h5>Enter the Age value: </h5>
+      </div>
+      <div class="col">
+        <input type="text" name="f1" id="f1" placeholder="Age" autocomplete="off">
+      </div>
+      <span id="age"></span>
+    </div>
+    <div class="row">
+      <div class="col">
+        <h5>Enter the Sex value: </h5>
+      </div>
+      <div class="col">
+        <input type="text" name="f2" id="f2" placeholder='Sex' autocomplete="off">
+      </div>
+      <span id="sex"></span>
+    </div>
+    <div class="row">
+      <div class="col">
+        <h5>Enter the cp value: </h5>
+      </div>
+      <div class="col">
+        <input type="text" name="f3" id="f3" placeholder="cp" autocomplete="off">
+      </div>
+      <span id="cp"></span>
+    </div>
+    <div class="row">
+      <div class="col">
+        <h5>Enter the trestbps value: </h5>
+      </div>
+      <div class="col">
+        <input type="text" name="f4" id="f4" placeholder="trestbps" autocomplete="off">
+      </div>
+      <span id="trestbps"></span>
+    </div>
+    <div class="row">
+      <div class="col">
+        <h5>Enter the chol value: </h5>
+      </div>
+      <div class="col">
+        <input type="text" name="f5" id="f5" placeholder="chol" autocomplete="off">
+      </div>
+      <span id="chol"></span>
+    </div>
+    <div class="row">
+      <div class="col">
+        <h5>Enter the fbs value: </h5>
+      </div>
+      <div class="col">
+        <input type="text" name="f6" id="f6" placeholder='fbs' autocomplete="off">
+      </div>
+      <span id="fbs"></span>
+    </div>
+    <div class="row">
+      <div class="col">
+        <h5>Enter the  Restecg value: </h5>
+      </div>
+      <div class="col">
+        <input type="text" name="f7" id="f7" placeholder="Restecg" autocomplete="off">
+      </div>
+      <span id="restecg"></span>
+    </div>
+    <div class="row">
+      <div class="col">
+        <h5>Enter the Thalach value: </h5>
+      </div>
+      <div class="col"> 
+        <input type="text" name="f8" id="f8" placeholder="Thalach" autocomplete="off">
+      </div>
+      <span id="thalach"></span>
+    </div>
+    <div class="row">
+      <div class="col">
+        <h5>Enter the Exang value: </h5>
+      </div>
+      <div class="col">
+        <input type="text" name="f9" id="f9" placeholder="Exang" autocomplete="off">
+      </div>
+      <span id="exang"></span>
+    </div>
+    <div class="row">
+      <div class="col">
+        <h5>Enter the Oldpeak value: </h5>
+      </div>
+      <div class="col">
+        <input type="text" name="f10" id="f10" placeholder='Oldpeak' autocomplete="off">
+      </div>
+      <span id="oldpeak"></span>
+    </div>
+    <div class="row">
+      <div class="col">
+        <h5>Enter the Slope value: </h5>
+      </div>
+      <div class="col">
+        <input type="text" name="f11" id="f11" placeholder="Slope" autocomplete="off">
+      </div>
+      <span id="slope"></span>
+    </div>
+    <div class="row">
+      <div class="col">
+        <h5>Enter the ca value: </h5>
+      </div>
+      <div class="col">
+        <input type="text" name="f12" id="f12" placeholder="ca" autocomplete="off">
+      </div>
+      <span id="ca"></span>
+    </div>
+    <div class="row">
+      <div class="col">
+        <h5>Enter the Thal value: </h5>
+      </div>
+      <div class="col">
+        <input type="text" name="f13" id="f13" placeholder="Thal" autocomplete="off">
+      </div>
+      <span id="thal"></span>
+    </div><br>
+    <button type="submit" class="btn" id="btn" value="predict">Submit</button>
+  </form>
+  <div class="row">
+    <h3>
+      {{prediction}}
+    </h3>
+  </div>
+</body>
+
+</html>							
